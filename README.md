@@ -64,17 +64,18 @@ python3 manage.py migrate
 ```
 python3 manage.py createsuperuser
 ```
+> Run on port 8000:
+
+```
+python manage.py runserver
+```
+
 * enter username and password
 * go to below url and login with superuser credentials and create user with read-only access
   ```
   http://127.0.0.0.1:8000/admin
   ```
 
-> Run on port 8000:
-
-```
-python manage.py runserver
-```
 
 ### Running the ReactJS Project
 
