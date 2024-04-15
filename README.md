@@ -7,35 +7,35 @@ Login and display data table on landing page based on roles
 Clone the repository
 
 #### Prerequisites 
->Python3
->PIP
->node.js
+*Python3
+*PIP
+*node.js
 
 #### Running the Django Project
 
 > Move into Assignment directory (django):
 ```
-cd server
+cd Assignment
 ```
 
 > Create virtual environment
 
-- On WindowsOS
+- On WindowsOS/Linux
 
 ```
-python -m venv venv
+python3 -m venv venv
 ```
 
 > Activate virtual environment 
 
 - Using bash:
 ```
-source <venv>/Scripts/activate
+source venv/bin/activate
 ```
 
 - Using CMD:
 ```
-<venv>\Scripts\activate
+venv\Scripts\activate
 ```
 
 > Install requirements
@@ -47,12 +47,23 @@ pip install -r requirements.txt
 > Run migrations:
 
 ```
-python manage.py makemigrations
+python3 manage.py makemigrations
 ```
 
 ```
-python manage.py migrate
+python3 manage.py migrate
 ```
+
+> Create superuser:
+
+```
+python3 manage.py createsuperuser
+```
+* enter username and password
+* go to below url and login with superuser credentials and create user with read-only access
+  ```
+  http://127.0.0.0.1:8000/admin
+  ```
 
 > Run on port 8000:
 
@@ -73,8 +84,6 @@ cd frontend
 ```
 npm install
 ```
-
-> Create .env file using .env.sample
 
 > Start the project
 
