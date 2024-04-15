@@ -5,6 +5,9 @@ Login and display data table on landing page based on roles
 ## Run the Project
 
 Clone the repository
+```
+https://github.com/vaibhav212/Assignment.git
+```
 
 #### Prerequisites 
 >Python3
