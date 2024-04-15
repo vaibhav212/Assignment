@@ -3,18 +3,20 @@
 Login and display data table on landing page based on roles
 
 ## Run the Project
-
 Clone the repository
 ```
 https://github.com/vaibhav212/Assignment.git
 ```
-
 #### Prerequisites 
->Python3
-##
->PIP
-##
->node.js
+```
+Python3
+```
+```
+PIP
+```
+```
+node.js
+```
 
 #### Running the Django Project
 
@@ -75,8 +77,7 @@ python manage.py runserver
   ```
   http://127.0.0.0.1:8000/admin
   ```
-
-
+  
 ### Running the ReactJS Project
 
 > Move into frontend directory (ReactJS)
