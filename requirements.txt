@@ -1,5 +1,5 @@
 Django==3.2
-django-cors-headers==4.3.1
+django-cors-headers
 PyJWT==1.7.1
 djangorestframework==3.15.1
 djangorestframework-simplejwt==4.3.0
