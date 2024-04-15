@@ -1,0 +1,8 @@
+{
+    "message": "Login successful",
+    "token": {
+        "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcxMzA1MDkxNCwiaWF0IjoxNzEyOTY0NTE0LCJqdGkiOiI3ZGE4MTUxMzFiMzM0NjNiYTI2Mzc2NjYwZDM4ZGIxNyIsInVzZXJfaWQiOjN9.ReCjyUoWZVQ2Q3MsQJlVp97DFTRVkgM2RER6_arK-XQ",
+        "access": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEyOTY0ODE0LCJpYXQiOjE3MTI5NjQ1MTQsImp0aSI6ImQ1M2ExNWM2ODQxMTRmNGU5YzRhMmE1MDM2ZjU3ZTQ1IiwidXNlcl9pZCI6M30.SUntm193e1JckBpI9ZC6T5YcwUJZlxwbUuyfWH2ZtjE"
+    },
+    "role": "read-only"
+}
