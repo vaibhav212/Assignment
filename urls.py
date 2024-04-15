@@ -23,6 +23,5 @@ urlpatterns = [
     path('login_get', views.login_get, name='login_get'),
     path('get_data', views.get_data, name='get_data'),
     path('add_data', views.add_data, name='add_data'),
-    path('delete_data/<int:id>', views.delete_data, name='delete_data'),
     path('update_data/<int:id>', views.update_data, name='update_data'),
 ]
