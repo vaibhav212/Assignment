@@ -7,8 +7,8 @@ Login and display data table on landing page based on roles
 Clone the repository
 
 #### Prerequisites 
-*Python3
-*PIP
+*Python3\n
+*PIP\n
 *node.js
 
 #### Running the Django Project
