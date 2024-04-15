@@ -17,5 +17,3 @@ root.render(
   </BrowserRouter>
 </StyledEngineProvider>
 );
-
-//<Route path="DataList" element={<DataList accessToken={localStorage.getItem('accessToken')} />} />
