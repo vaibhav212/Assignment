@@ -16,7 +16,7 @@ const DataList = ({ accessToken = sessionStorage.getItem('accessToken') }) => {
         });
         setData(response.data);
     } catch (error) {
-        console.error("error is here"); // Handle error
+        console.error("error is here");
     }},[accessToken]);
 
     useEffect(() => {
@@ -32,12 +32,12 @@ const DataList = ({ accessToken = sessionStorage.getItem('accessToken') }) => {
      };
 
     const handleSubmit = async (newRow) => {
-        if (rowToEdit === null) { // If rowToEdit is null, it means the user is adding a new row
+        if (rowToEdit === null) {
             try {
                 await addData(newRow);
                 fetchData();
             } catch (error) {
-                console.error(error); // Handle error
+                console.error(error);
             }
         } else {
         handleEdit(newRow.id, newRow);
@@ -56,9 +56,8 @@ const DataList = ({ accessToken = sessionStorage.getItem('accessToken') }) => {
             Authorization: `Bearer ${accessToken}`
         }});
       console.log(response)
-    // Refresh data after adding new data
     } catch (error) {
-        console.error(error); // Handle error
+        console.error(error);
     }};
 
     const handleEdit = async (id, newRow) => {
@@ -76,7 +75,7 @@ const DataList = ({ accessToken = sessionStorage.getItem('accessToken') }) => {
             });
             setData(response.data);
         } catch (error) {
-            console.error(error); // Handle error
+            console.error(error);
         }
     };
 
