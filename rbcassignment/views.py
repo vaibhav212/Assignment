@@ -1,8 +1,7 @@
-from django.shortcuts import render
-
 # Create your views here.
 import json
 import jwt
+from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 from django.http import JsonResponse
 from django.conf import settings
@@ -66,7 +65,7 @@ def get_data(request):
                 messages = Message.objects.all().values('id', 'userID', 'message')
             return JsonResponse(list(messages), safe=False)
     except Exception as e:
-        return JsonResponse({"error is here": str(e)}, status=403)
+        return JsonResponse({"Error in fetching data.": str(e)}, status=403)
 
 @csrf_exempt
 def add_data(request):
@@ -77,7 +76,7 @@ def add_data(request):
         user_id = decoded_token['user_id']
         user = User.objects.get(pk=user_id)
         if user is None or not user.is_superuser:
-            return JsonResponse({"error": "Unauthorized"}, status=403)
+            return JsonResponse({"Error": "User does not have access"}, status=403)
         else:
             if request.method == 'POST':
                 try:
@@ -88,11 +87,11 @@ def add_data(request):
                 except json.JSONDecodeError:
                     return JsonResponse({'error': 'Invalid JSON data'}, status=400)
                 except KeyError:
-                    return JsonResponse({'error': 'Invalid JSON data'}, status=401)
+                    return JsonResponse({'error': 'Invalid JSON data with KeyError'}, status=401)
             else:
                 return JsonResponse({"error": "Invalid method"}, status=405)
     except Exception as e:
-        return JsonResponse({"error": str(e)}, status=403)
+        return JsonResponse({"Error in adding data": str(e)}, status=403)
 
 @csrf_exempt
 def update_data(request, id):
@@ -103,7 +102,7 @@ def update_data(request, id):
         user_id = decoded_token['user_id']
         user = User.objects.get(pk=user_id)
         if user is None or not user.is_superuser:
-            return JsonResponse({"error": "Unauthorized"}, status=403)
+            return JsonResponse({"error": "User does not have access"}, status=403)
         else:
             # Retrieve the message object
             message = get_object_or_404(Message, pk=id)
@@ -120,11 +119,11 @@ def update_data(request, id):
                 except json.JSONDecodeError:
                     return JsonResponse({'error': 'Invalid JSON data'}, status=400)
                 except KeyError:
-                    return JsonResponse({'error': 'Invalid data'}, status=401)
+                    return JsonResponse({'error': 'Invalid JSON data with KeyError'}, status=401)
             else:
-                return JsonResponse({"error": "Invalid method"}, status=405)
+                return JsonResponse({"error": "Wrong Http Method."}, status=405)
     except Exception as e:
-        return JsonResponse({"error": str(e)}, status=403)
+        return JsonResponse({"error, unable to update data.": str(e)}, status=403)
 
 @csrf_exempt
 def delete_data(request, id):
@@ -135,7 +134,7 @@ def delete_data(request, id):
         user_id = decoded_token['user_id']
         user = User.objects.get(pk=user_id)
         if user is None or not user.is_superuser:
-            return JsonResponse({"error": "Unauthorized"}, status=403)
+            return JsonResponse({"error": "User is not superuser."}, status=403)
         else:
             # Retrieve the message object
             #data = json.loads(request.body)
@@ -148,5 +147,5 @@ def delete_data(request, id):
             else:
                 return JsonResponse({"error": "Invalid method"}, status=405)
     except Exception as e:
-        return JsonResponse({"error": str(e)}, status=403)
+        return JsonResponse({"error: unable to delete": str(e)}, status=403)
 
